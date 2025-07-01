@@ -19,7 +19,7 @@ const CsvUpload = ({ onUploadSuccess }) => {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      await axios.post("http://localhost:8080/api/bulk-upload", formData, {
+      await axios.post("http://intern-management-production.up.railway.app/api/bulk-upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setMessage("Upload successful!");

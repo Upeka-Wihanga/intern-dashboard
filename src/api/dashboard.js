@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api/dashboard",
+  baseURL: "https://intern-management-production.up.railway.app/api/dashboard",
 });
 
 export const getSummary = () => api.get("/summary");
