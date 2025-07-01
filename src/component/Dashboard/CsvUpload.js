@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Box, Typography, LinearProgress } from "@mui/material";
 import axios from "axios";
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || "https://intern-management-production.up.railway.app";
+
 const CsvUpload = ({ onUploadSuccess }) => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -19,7 +21,7 @@ const CsvUpload = ({ onUploadSuccess }) => {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      await axios.post("http://intern-management-production.up.railway.app/api/bulk-upload", formData, {
+      await axios.post(`${apiBaseUrl}/api/bulk-upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setMessage("Upload successful!");
