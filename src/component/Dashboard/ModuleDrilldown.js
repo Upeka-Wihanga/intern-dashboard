@@ -18,7 +18,7 @@ const ModuleDrilldown = () => {
 
   useEffect(() => {
     // Adjust this endpoint if your backend structure is different
-    axios.get("http://localhost:8080/api/projects").then((res) => {
+    axios.get("https://intern-management-production.up.railway.app/api/projects").then((res) => {
       setProjects(res.data);
       setLoading(false);
     });
